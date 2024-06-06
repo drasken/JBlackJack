@@ -1,2 +1,2 @@
-# JBlackJack
-Repo for JBlackJack uni project
+# controller.JBlackJack
+Repo for controller.JBlackJack uni project
