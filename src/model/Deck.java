@@ -14,14 +14,9 @@ public class Deck {
     public Deck() {
         for (Card.Segno segno : Card.Segno.values()) {
             for (Card.Valore valore : Card.Valore.values()) {
-                if (valore != Card.Valore.JOLLY) {
                     cards.add(new Card(segno, valore));
                 }
             }
-        }
-        cards.add(new Card(null, Card.Valore.JOLLY));
-        cards.add(new Card(null, Card.Valore.JOLLY));
-
         this.shuffleCards();
     }
 
@@ -35,16 +30,13 @@ public class Deck {
         for (int i = 0; i < num; i++) {
             for (Card.Segno segno : Card.Segno.values()) {
                 for (Card.Valore valore : Card.Valore.values()) {
-                    if (valore != Card.Valore.JOLLY) {
-                        cards.add(new Card(segno, valore));
+                    cards.add(new Card(segno, valore));
                     }
                 }
             }
-            cards.add(new Card(null, Card.Valore.JOLLY));
-            cards.add(new Card(null, Card.Valore.JOLLY));
-        }
         this.shuffleCards();
     }
+
 
     @Override
     public String toString() {
@@ -71,12 +63,12 @@ public class Deck {
         Deck deck = new Deck(3);
         System.out.println(deck.toString()); //OK
 
-        for (Card car: deck.cards){
-            System.out.println(car.toString());
-        }
+//        for (Card car: deck.cards){
+//            System.out.println(car.toString());
+//        }
 
         Card test = deck.Serve();
-        System.out.println(test.toString()); // OK
+        System.out.println("Prova di metodo: " + test.toString()); // OK
     }
 
 }

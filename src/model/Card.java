@@ -9,7 +9,7 @@ public class Card {
     /**
      * Enum used to represent a Card's value
      */
-    public enum Valore{ASSO,DUE,TRE,QUATTRO,CINQUE,SEI,SETTE,OTTO,NOVE,DIECI,FANTE,DONNA,RE,JOLLY}
+    public enum Valore{ASSO,DUE,TRE,QUATTRO,CINQUE,SEI,SETTE,OTTO,NOVE,DIECI,FANTE,DONNA,RE}
 
     private Segno segno;
     private Valore valore;
@@ -32,14 +32,15 @@ public class Card {
         return valore;
     }
 
-    // Override toString() method to print card details
+    // TODO: Override toString() method to print card details
     @Override
     public String toString() {
-        if (valore == Valore.JOLLY) {
-            return "Jolly";
-        } else {
-            return valore + " di " + segno;
-        }
+//        if (valore == Valore.JOLLY) {
+//            return "Jolly";
+//        } else {
+//            return valore + " di " + segno;
+//        }
+        return valore + " di " + segno;
     }
 
 }
