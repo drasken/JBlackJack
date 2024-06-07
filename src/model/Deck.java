@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Collection;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -20,7 +22,7 @@ public class Deck {
         cards.add(new Card(null, Card.Valore.JOLLY));
         cards.add(new Card(null, Card.Valore.JOLLY));
 
-        this.shuffle();
+        this.shuffleCards();
     }
 
     public Deck (int num){
@@ -41,7 +43,7 @@ public class Deck {
             cards.add(new Card(null, Card.Valore.JOLLY));
             cards.add(new Card(null, Card.Valore.JOLLY));
         }
-        this.shuffle();
+        this.shuffleCards();
     }
 
     @Override
@@ -56,11 +58,12 @@ public class Deck {
         return cards.removeFirst();
     }
 
-    public void shuffle(){
+    public void shuffleCards(){
         /**
-         * Shuffle the Deck to order the Card in a random position.
+         * Shuffle the Deck to put the Card in a random position.
          */
         //TODO: IMPLEMENTT IT
+        Collections.shuffle(cards);
     }
 
     public static void main (String[] args){
@@ -68,9 +71,9 @@ public class Deck {
         Deck deck = new Deck(3);
         System.out.println(deck.toString()); //OK
 
-//        for (Card car: deck.cards){
-//            System.out.println(car.toString());
-//        }
+        for (Card car: deck.cards){
+            System.out.println(car.toString());
+        }
 
         Card test = deck.Serve();
         System.out.println(test.toString()); // OK
