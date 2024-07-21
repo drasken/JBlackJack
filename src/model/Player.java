@@ -1,21 +1,21 @@
 package model;
 
+/**
+ * Player is the abstract class representing each possible paleyer in a game.
+ *
+ * @param: name. The name that identify the player
+ * @param: money. The money that the player has at the moment
+ */
 public abstract class Player {
-    /**
-     * Player is the abstract class representing each possible paleyer in a game.
-     *
-     * @param: name. The name that identify the player
-     * @param: money. The money that the player has at the moment
-     */
+
 
     public String name;
-    public int money;
+    //public int money;
     public Deck first_hand;
     public Deck second_hand; //Hand used when splitting the game
 
-    public Player(String name, int money){
+    public Player(String name){
 
-        this.money = money;
         this.name = name;
     }
 
@@ -24,5 +24,16 @@ public abstract class Player {
         return "The name is : " + this.name;
     }
 
+    public Deck getFirst_hand() {
+        return first_hand;
+    }
+
+    public Deck getSecond_hand() {
+        return second_hand;
+    }
+
+    public String getName() {
+        return name;
+    }
 }
 

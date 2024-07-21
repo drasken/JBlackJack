@@ -16,7 +16,7 @@ public class JView {
         // Defining the JPanle object to add later in frame object
         JPanel contentPane = new JPanel(new BorderLayout());
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-        contentPane.setBackground(Color.GREEN);
+        contentPane.setBackground(Color.LIGHT_GRAY);
         //contentPane.setPreferredSize(new Dimension(800, 600));
         //contentPane.setMaximumSize(new Dimension(800, 600));
         //contentPane.setMinimumSize(new Dimension(800, 600));

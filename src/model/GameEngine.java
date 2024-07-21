@@ -4,10 +4,12 @@ import java.util.Observable;
 
 public class GameEngine extends Observable {
     /**
-     * This class following the exemple of the various chess engine this class will give the API to the underlying game logic.
+     * This class will expose the API to the underlying game logic.
      */
 
     private static GameEngine instance;
+
+
     private GameEngine() {
         // TODO: WRITE THE CONSTRUCTOR
     }

@@ -5,10 +5,11 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * The Class representing a Dek. Classic 52 cards deck.
+ */
 public class Deck {
-    /**
-     * The Class representing a Dek
-     */
+
     public LinkedList <Card> cards = new LinkedList<Card>();
 
     public Deck() {
@@ -20,13 +21,13 @@ public class Deck {
         this.shuffleCards();
     }
 
+    /**
+     * Overloaded constructor to build a deck repeated a number num of times.
+     *
+     * @param num:  number of standard 54 cards decks we want to build into our main Deck
+     */
     public Deck (int num){
 
-        /**
-         * Overloaded constructor to build a deck repeated a number num of times.
-         *
-         * @param num:  number of standard 54 cards decks we want to build into our main Deck
-         */
         for (int i = 0; i < num; i++) {
             for (Card.Segno segno : Card.Segno.values()) {
                 for (Card.Valore valore : Card.Valore.values()) {
@@ -43,17 +44,19 @@ public class Deck {
         return "Deck [cards= nel mazzo ci sono " + cards.size() + " carte]";
     }
 
+    /**
+     * Serves first card from the top of the Deck. Return the Card served and remove it from the Deck.
+     */
     public Card Serve(){
-        /**
-         * Method used to serv first card from the top of the Deck. Return the Card served and remove it from the Deck.
-         */
+
         return cards.removeFirst();
     }
 
+    /**
+     * Shuffle the Deck to put the Card in a random position.
+     */
     public void shuffleCards(){
-        /**
-         * Shuffle the Deck to put the Card in a random position.
-         */
+
         //TODO: IMPLEMENTT IT
         Collections.shuffle(cards);
     }
@@ -69,6 +72,8 @@ public class Deck {
 
         Card test = deck.Serve();
         System.out.println("Prova di metodo: " + test.toString()); // OK
+        System.out.println(deck.toString()); //OK
+
     }
 
 }
