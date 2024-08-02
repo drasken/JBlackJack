@@ -16,6 +16,6 @@ public class Croupier extends Gamer {
 
     @Override
     public boolean callCard() {
-        return false;
+        return false; //TODO implements
     }
 }
