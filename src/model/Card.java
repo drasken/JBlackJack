@@ -1,6 +1,9 @@
 package model;
 
 public class Card {
+
+    boolean visible;
+
     /**
      * Enum used to represent a Card's sign
      */
@@ -30,6 +33,10 @@ public class Card {
 
     public Valore getValore() {
         return valore;
+    }
+
+    public void revealCard() {
+        if (this.visible==false) this.visible = true;
     }
 
     // TODO: Override toString() method to print card details

@@ -6,15 +6,14 @@ package model;
  * @param: name. The name that identify the player
  * @param: money. The money that the player has at the moment
  */
-public abstract class Player {
+public abstract class Gamer {
 
 
     public String name;
-    //public int money;
     public Deck first_hand;
     public Deck second_hand; //Hand used when splitting the game
 
-    public Player(String name){
+    public Gamer(String name){
 
         this.name = name;
     }
@@ -35,5 +34,7 @@ public abstract class Player {
     public String getName() {
         return name;
     }
+
+    abstract public boolean callCard();
 }
 
