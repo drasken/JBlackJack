@@ -1,13 +1,18 @@
 package model;
 
+import java.util.LinkedList;
 import java.util.Observable;
 
+/**
+ * This class will expose the API of the underlying game logic.
+ */
+
 public class GameEngine extends Observable {
-    /**
-     * This class will expose the API to the underlying game logic.
-     */
 
     private static GameEngine instance;
+    private LinkedList <NpcGamer> gamers;
+    private HumanGamer humanPlayer;
+    private Croupier croupier;
 
 
     private GameEngine() {
@@ -29,5 +34,29 @@ public class GameEngine extends Observable {
     - Start another turn with only the player that still have money
 
      */
+
+    /**
+     * This method is the public method used to initialize a game
+     * @param npcNum
+     */
+    public void initGame(int npcNum){
+        for (int i = 0; i < npcNum; i++) {
+            NpcGamer aiGamer = new NpcGamer("Player " + i);
+            gamers.add(aiGamer);
+        }
+        this.humanPlayer = HumanGamer.getInstance();
+        this.croupier = Croupier.getInstance();
+
+    }
+
+    public static void main (String [] args){
+        GameEngine gameEngine = new GameEngine();
+        gameEngine.initGame(2);
+        for(NpcGamer gam:instance.gamers){
+            System.out.println(gam);
+        }
+        System.out.println(gameEngine.humanPlayer);
+        System.out.println(gameEngine.croupier);
+    }
 
 }

@@ -27,4 +27,12 @@ public class HumanGamer  extends Gamer {
     public boolean callCard() {
         return false;
     }
+
+    @Override
+    public String toString() {
+        return "HumanGamer{" +
+                "name='" + name + '\'' +
+                ", money=" + money +
+                '}';
+    }
 }

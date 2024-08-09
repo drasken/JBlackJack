@@ -18,4 +18,11 @@ public class Croupier extends Gamer {
     public boolean callCard() {
         return false; //TODO implements
     }
+
+    @Override
+    public String toString() {
+        return "Croupier{" +
+                "name='" + name + '\'' +
+                '}';
+    }
 }

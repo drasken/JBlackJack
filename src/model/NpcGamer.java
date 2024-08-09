@@ -13,4 +13,12 @@ public class NpcGamer extends Gamer {
     public boolean callCard() {
         return false;
     }
+
+    @Override
+    public String toString() {
+        return "NpcGamer{" +
+                "name='" + name + '\'' +
+                ", money=" + money +
+                '}';
+    }
 }
