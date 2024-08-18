@@ -5,12 +5,23 @@ import java.awt.*;
 
 public class HomeScreen extends JPanel {
 
+    private JFrame homeFrame;
     private JPanel contentPane;
     private JButton continueButton;
     private JButton newPlayerButton;
     private JButton exitButton;
     private JPanel buttonsPanel;
+    private ImageIcon welcomeImage;
+    private JLabel imageLabel;
 
+    public HomeScreen() {
+        //try
+        welcomeImage = new ImageIcon("images/welcome.png");
+        contentPane = new JPanel();
+
+    }
+
+    /*
     public HomeScreen() {
         setLayout(new BorderLayout());
         this.buttonsPanel = new JPanel();
@@ -28,5 +39,6 @@ public class HomeScreen extends JPanel {
         //add(buttonsPanel, BorderLayout.CENTER);
         //contentPane.setLayout(new BoxLayout());
     }
+    */
 
 }

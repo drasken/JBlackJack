@@ -6,25 +6,38 @@ import java.awt.*;
 
 public class JView extends JFrame {
 
+    //private static final Object frameName = "JBlackJack";
     //private String frameName = "JBlackJack";
+    private static JView instance;
+    private HomeScreen homeScreen;
 
-    public JView () {
+
+    private JView () {
         //this.frameName = frameName;
-        super("JBlackjack");
+        super("JBlackJack");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(800, 600);
-        setBackground(Color.LIGHT_GRAY);
+        setPreferredSize(new Dimension(800, 600));
+        setBackground(Color.RED);
         setLocationRelativeTo(null);
-        setLayout(new CardLayout());
-        HomeScreen homeScreen = new HomeScreen();
-        add(homeScreen, BorderLayout.PAGE_END);
+        //setLayout(new CardLayout());
+        setLayout(new BorderLayout());
+        homeScreen = new HomeScreen();
+        add(homeScreen, BorderLayout.CENTER);
+        pack();
         setVisible(true);
 
     }
 
+    public static JView getInstance () {
+        if (instance == null) {
+            instance = new JView();
+        }
+        return instance;
+    }
+
     public static void main(String[] args) {
 
-        new JView();
+        SwingUtilities.invokeLater( () -> JView.getInstance());
         /*JFrame frame = new JFrame("Prova GUI");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(800, 600);

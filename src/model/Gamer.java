@@ -35,6 +35,10 @@ public abstract class Gamer {
         return name;
     }
 
-    abstract public boolean callCard();
+    public abstract boolean callCard();
+
+    public void addCardToFirstHand(Card card) {
+        first_hand.addCardToDeck(card);
+    }
 }
 

@@ -13,12 +13,15 @@ public class HumanGamer  extends Gamer {
     private int games;
     private int losses;
 
+
     private HumanGamer (String name){
         super(name);
+        this.first_hand = new Deck();
+
     }
-    public static HumanGamer getInstance(){
+    public static HumanGamer getInstance(String humanName){
         if(instance == null){
-            instance = new HumanGamer("Human");
+            instance = new HumanGamer(humanName);
         }
         return instance;
     }
@@ -32,6 +35,7 @@ public class HumanGamer  extends Gamer {
     public String toString() {
         return "HumanGamer{" +
                 "name='" + name + '\'' +
+                ", Cards " + first_hand +
                 ", money=" + money +
                 '}';
     }

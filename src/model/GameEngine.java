@@ -15,20 +15,25 @@ public class GameEngine extends Observable {
     private Croupier croupier;
 
 
-    private GameEngine() {
+    private GameEngine(int npcNum, String humanName) {
         // TODO: WRITE THE CONSTRUCTOR
+        this.gamers = new LinkedList<NpcGamer>();
+        createNpc(npcNum);
+        this.humanPlayer = HumanGamer.getInstance(humanName);
+        this.croupier = Croupier.getInstance();
+
     }
-    public static GameEngine getInstance() {
+    public static GameEngine getInstance(int npcNum, String humenName) {
         if (instance == null){
-            return new GameEngine();
+            return new GameEngine(npcNum, humenName);
         }
         return instance;
     }
 
     /*
     TODO: Here a random list of methods to implement
-    - Add players: need to add players to the game. One is always a human player
-    - Need to represent the Coupier player, here or as a subclass of NPC Player
+    - Add players: need to add players to the game. One is always a human player: DONE
+    - Need to represent the Coupier player, here or as a subclass of NPC Player: DONE
     - Play with each player when is its turn. At the end play with Croupier as last player.
     - At the end confront each player's points with the croupiers and pay/take money to players
     - Start another turn with only the player that still have money
@@ -39,24 +44,62 @@ public class GameEngine extends Observable {
      * This method is the public method used to initialize a game
      * @param npcNum
      */
-    public void initGame(int npcNum){
+    public void createNpc (int npcNum){
         for (int i = 0; i < npcNum; i++) {
             NpcGamer aiGamer = new NpcGamer("Player " + i);
             gamers.add(aiGamer);
         }
-        this.humanPlayer = HumanGamer.getInstance();
-        this.croupier = Croupier.getInstance();
-
     }
 
+    /**
+     * This method is used by a Gamer class to call for card when is its turn
+     * @param gamerPlaying
+     * @param croupier
+     */
+    public void playCall(Gamer gamerPlaying, Croupier croupier){
+        gamerPlaying.addCardToFirstHand(croupier.serveCard());
+    }
+
+
+    //all these mothods are for thesting
+    //TODO: Delete when games works
+    public void printHuman(){
+        System.out.println(humanPlayer);
+    }
+
+    public void printCroupier(){
+        System.out.println(croupier);
+    }
+
+    public void printNpc(){
+        for (NpcGamer aiGamer : gamers) {
+            System.out.println(aiGamer);
+        }
+    }
+
+
     public static void main (String [] args){
-        GameEngine gameEngine = new GameEngine();
+        //GameEngine gameEngine = new GameEngine();
+        GameEngine gameInstance = GameEngine.getInstance(2, "ProvaNome");
+        gameInstance.printNpc();
+        gameInstance.printCroupier();
+        gameInstance.printHuman();
+
+        gameInstance.playCall(gameInstance.humanPlayer, gameInstance.croupier);
+
+        gameInstance.printHuman();
+
+
+
+        //TODO Old, to delete
+        /*
         gameEngine.initGame(2);
         for(NpcGamer gam:instance.gamers){
             System.out.println(gam);
         }
         System.out.println(gameEngine.humanPlayer);
         System.out.println(gameEngine.croupier);
+        */
     }
 
 }

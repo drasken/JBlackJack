@@ -1,10 +1,13 @@
 package model;
 
+import java.util.LinkedList;
+
 public class NpcGamer extends Gamer {
     int money = 1000;
 
     public NpcGamer(String name) {
         super(name);
+        this.first_hand = new Deck();
         //TODO implement
     }
 
@@ -19,6 +22,7 @@ public class NpcGamer extends Gamer {
         return "NpcGamer{" +
                 "name='" + name + '\'' +
                 ", money=" + money +
+                ", cards " + getFirst_hand() +
                 '}';
     }
 }
