@@ -39,4 +39,10 @@ public class HumanGamer  extends Gamer {
                 ", money=" + money +
                 '}';
     }
+
+    @Override
+    public int makeBet(int moneyToBet){
+        this.money -= moneyToBet;
+        return moneyToBet;
+    }
 }

@@ -34,4 +34,8 @@ public class Croupier extends Gamer {
     public Card serveCard(){
         return first_hand.Serve();
     }
+
+    public int makeBet(){
+        return 0;
+    }
 }

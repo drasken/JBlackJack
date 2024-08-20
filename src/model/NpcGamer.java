@@ -25,4 +25,16 @@ public class NpcGamer extends Gamer {
                 ", cards " + getFirst_hand() +
                 '}';
     }
+
+    public int makeBet(){
+        if (this.money >= 50){
+            int toBet = this.money;
+            this.money = 0;
+            return toBet;
+        }
+        int toBet = (int) this.money / 5;
+        this.money -= toBet;
+        return toBet;
+    }
+
 }

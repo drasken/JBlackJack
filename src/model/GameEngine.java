@@ -45,7 +45,7 @@ public class GameEngine extends Observable {
      * @param npcNum
      */
     public void createNpc (int npcNum){
-        for (int i = 0; i < npcNum; i++) {
+        for (int i = 1; i <= npcNum; i++) {
             NpcGamer aiGamer = new NpcGamer("Player " + i);
             gamers.add(aiGamer);
         }
@@ -58,6 +58,11 @@ public class GameEngine extends Observable {
      */
     public void playCall(Gamer gamerPlaying, Croupier croupier){
         gamerPlaying.addCardToFirstHand(croupier.serveCard());
+    }
+
+    public void playTurn(Gamer gamerPlaying, Croupier croupier){
+        //TODO implement method
+        int betMoney = gamerPlaying.makeBet();
     }
 
 
@@ -84,13 +89,16 @@ public class GameEngine extends Observable {
         gameInstance.printNpc();
         gameInstance.printCroupier();
         gameInstance.printHuman();
-
+        
+        //Prova se scambiano carte
         gameInstance.playCall(gameInstance.humanPlayer, gameInstance.croupier);
+        gameInstance.playCall(gameInstance.gamers.get(1), gameInstance.croupier);
+        gameInstance.printNpc();
+        gameInstance.printHuman(); // OK, funziona
 
-        gameInstance.printHuman();
-
-
-
+        //Prova scommessa
+        int scommessa = gameInstance.gamers.getFirst().makeBet();
+        System.out.println("Ha scommesso :" + scommessa);
         //TODO Old, to delete
         /*
         gameEngine.initGame(2);

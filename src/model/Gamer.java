@@ -40,5 +40,7 @@ public abstract class Gamer {
     public void addCardToFirstHand(Card card) {
         first_hand.addCardToDeck(card);
     }
+
+    public abstract int makeBet();
 }
 
