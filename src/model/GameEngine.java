@@ -60,9 +60,14 @@ public class GameEngine extends Observable {
         gamerPlaying.addCardToFirstHand(croupier.serveCard());
     }
 
-    public void playTurn(Gamer gamerPlaying, Croupier croupier){
+    public void playTurn(MakeBet gamerPlaying, Croupier croupier){
         //TODO implement method
         int betMoney = gamerPlaying.makeBet();
+        //fa un ciclo per il turno
+        boolean isInTurn = true;
+        while (isInTurn){
+            switch (gamerPlaying)
+        }
     }
 
 

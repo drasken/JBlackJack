@@ -2,7 +2,7 @@ package model;
 
 import java.util.LinkedList;
 
-public class NpcGamer extends Gamer {
+public class NpcGamer extends Gamer implements MakeBet{
     int money = 1000;
 
     public NpcGamer(String name) {

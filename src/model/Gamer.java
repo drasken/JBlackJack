@@ -41,6 +41,6 @@ public abstract class Gamer {
         first_hand.addCardToDeck(card);
     }
 
-    public abstract int makeBet();
+    //public abstract int makeBet();
 }
 
