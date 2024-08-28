@@ -41,10 +41,10 @@ public class GameEngine extends Observable {
      */
 
     /**
-     * This method is the public method used to initialize a game
+     * This method create the NPCs for the game
      * @param npcNum
      */
-    public void createNpc (int npcNum){
+    private void createNpc (int npcNum){
         for (int i = 1; i <= npcNum; i++) {
             NpcGamer aiGamer = new NpcGamer("Player " + i);
             gamers.add(aiGamer);
@@ -62,12 +62,13 @@ public class GameEngine extends Observable {
 
     public void playTurn(MakeBet gamerPlaying, Croupier croupier){
         //TODO implement method
+        /*
         int betMoney = gamerPlaying.makeBet();
         //fa un ciclo per il turno
         boolean isInTurn = true;
         while (isInTurn){
             switch (gamerPlaying)
-        }
+        }*/
     }
 
 
