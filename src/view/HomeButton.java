@@ -8,7 +8,7 @@ public class HomeButton extends JButton {
         super(name);
         setSize(25, 15);
         setAlignmentX(CENTER_ALIGNMENT);
-        setAlignmentY(CENTER_ALIGNMENT);
+        //setAlignmentY(CENTER_ALIGNMENT);
     }
 
 }
