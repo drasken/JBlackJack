@@ -6,19 +6,26 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * The Class representing a Dek. Classic 52 cards deck.
+ * The Class representing a Dek. A Deck is all set of cards, the classic 52 cards deck but even players hands.
+ * Whenever there are more than 1 card it can be considered a Deck
  */
 public class Deck {
 
     public LinkedList <Card> cards = new LinkedList<Card>();
 
     public Deck() {
+
+        this.cards = new LinkedList<Card>();
+
+        /*
         for (Card.Segno segno : Card.Segno.values()) {
             for (Card.Valore valore : Card.Valore.values()) {
                     cards.add(new Card(segno, valore));
                 }
             }
         this.shuffleCards();
+
+         */
     }
 
     /**
@@ -50,6 +57,10 @@ public class Deck {
     public Card Serve(){
 
         return cards.removeFirst();
+    }
+
+    public void addCardToDeck(Card card){
+        cards.add(card);
     }
 
     /**
