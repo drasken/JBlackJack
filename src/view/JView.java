@@ -17,7 +17,7 @@ public class JView extends JFrame {
         super("JBlackJack");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setPreferredSize(new Dimension(800, 600));
-        setBackground(Color.RED);
+        //setBackground(Color.RED);
         setLocationRelativeTo(null);
         //setLayout(new CardLayout());
         setLayout(new BorderLayout());

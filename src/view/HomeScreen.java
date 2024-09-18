@@ -22,7 +22,8 @@ public class HomeScreen extends JPanel {
         setBackground(bgcolor);
 
 
-        welcomeImage = new ImageIcon("../asset/welcome.jpg");
+        welcomeImage = new ImageIcon("/asset/welcome.jpg");
+
         imageLabel = new JLabel(welcomeImage);
         imageLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
         add(imageLabel);

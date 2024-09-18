@@ -17,7 +17,7 @@ public class GameEngine extends Observable {
 
     private GameEngine(int npcNum, String humanName) {
         // TODO: WRITE THE CONSTRUCTOR
-        this.gamers = new LinkedList<NpcGamer>();
+        //this.gamers = new LinkedList<NpcGamer>();
         createNpc(npcNum);
         this.humanPlayer = HumanGamer.getInstance(humanName);
         this.croupier = Croupier.getInstance();
